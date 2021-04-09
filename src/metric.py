@@ -124,7 +124,8 @@ class TEDS(object):
                 etree.strip_tags(true, *self.ignore_nodes)
             n_nodes_pred = len(pred.xpath(".//*"))
             n_nodes_true = len(true.xpath(".//*"))
-            n_nodes = max(n_nodes_pred, n_nodes_true)
+            #n_nodes = max(n_nodes_pred, n_nodes_true)
+            n_nodes = n_nodes_true
             tree_pred = self.load_html_tree(pred)
             tree_true = self.load_html_tree(true)
             distance = APTED(tree_pred, tree_true, CustomConfig()).compute_edit_distance()
